@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackware Cybersecurity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(5px);
+      border-bottom: 2px solid #ff1a1a;
+      box-shadow: 0 0 20px rgba(255, 26, 26, 0.5);
+    }
+    header img {
+      height: 50px;
+    }
+    .menu-btn {
+      font-size: 26px;
+      cursor: pointer;
+      color: #fff;
+      background: none;
+      border: none;
+    }
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100%;
+      background: #111;
+      padding-top: 80px;
+      transition: 0.4s ease;
+      z-index: 999;
+      border-right: 2px solid #ff1a1a;
+      box-shadow: 5px 0 15px rgba(255, 26, 26, 0.3);
+    }
+    .sidebar.open {
+      left: 0;
+    }
+    .sidebar a {
+      display: block;
+      padding: 15px 25px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 18px;
+    }
+    .sidebar a:hover {
+      background: #ff1a1a;
+      box-shadow: 0 0 20px #ff1a1a;
+    }
+    /* Sections */
+    section {
+      display: none;
+      padding: 120px 20px 40px;
+      min-height: 100vh;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1 {
+      color: #ff4d4d;
+      margin-bottom: 15px;
+      font-size: 36px;
+      text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a;
+    }
+    p, li {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    ul { list-style: none; }
+    /* Certificates */
+    .cert-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cert-item img {
+      width: 100%;
+      max-width: 400px;
+      border: 3px solid #ff1a1a;
+      box-shadow: 0 0 25px rgba(255, 26, 26, 0.6);
+    }
+    .cert-text {
+      max-width: 600px;
+    }
+    .cert-text h2 {
+      color: #ff4d4d;
+      text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a;
+      margin-bottom: 10px;
+    }
+    .cert-text p {
+      font-size: 17px;
+      line-height: 1.5;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.postimg.cc/jdFcpyj9/logo.png" alt="Logo">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <div class="sidebar">
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('courses')">Courses</a>
+    <a href="#" onclick="showSection('certifications')">Certifications</a>
+    <a href="#" onclick="showSection('hiring')">We Are Hiring</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+  </div>
+
+  <section id="home">
+  <h1>Welcome to Blackware Cybersecurity</h1>
+
+  <h2>About Us</h2>
+  <p>BL4CKW4R3 is a cutting-edge cybersecurity company specializing in offensive security and red team engagements. Our primary mission is to simulate real-world cyberattacks on organizations to uncover vulnerabilities before malicious actors exploit them.</p>
+  <p>We deliver comprehensive red team operations, ranging from phishing campaigns and social engineering attacks to full-scale network compromise exercises. Our experts work hand-in-hand with clients to ensure that their digital assets remain secure against advanced threats.</p>
+  <p>Beyond red team engagements, we also provide offensive security training designed to transform beginners into professional penetration testers and red team operators through a progressive and hands-on learning experience.</p>
+
+  <h2>Penetration Testing Services</h2>
+  <p>At BL4CKW4R3, we go beyond traditional penetration testing. Our red team engagements cover:</p>
+  <ul>
+    <li>Web Applications: Identifying critical vulnerabilities in websites, APIs, and online services.</li>
+    <li>Corporate Infrastructure: Assessing internal networks, cloud platforms, and hybrid systems.</li>
+  </ul>
+  <p>What sets us apart is our <strong>"no-find, no-fee"</strong> model: We do not charge for initial scans. Payment is only required if we successfully identify exploitable vulnerabilities. This ensures we are fully committed to delivering tangible results and helps build trust with clients who want to test their security posture without financial risk.</p>
+
+  <h2>Offensive Security Courses</h2>
+  <p>We offer a three-level offensive security training program tailored to meet the needs of both beginners and advanced professionals:</p>
+  <ul>
+    <li>Offensive Security L1 – Covers Linux fundamentals, networking basics, and web security principles.</li>
+    <li>Offensive Security L2 – Introduces advanced penetration testing techniques, wireless hacking, and exploit development.</li>
+    <li>Offensive Security L3 – Focuses on cutting-edge topics such as drone hacking, car hacking, and exploiting air-gapped environments.</li>
+  </ul>
+  <p>Each course combines theory and hands-on labs to ensure students gain real-world offensive security skills.</p>
+
+  <h2>Certifications</h2>
+  <p>Our in-house certifications are designed to be affordable yet challenging, ensuring that only skilled individuals can earn them. Each certification follows a multi-stage assessment process:</p>
+  <ul>
+    <li>Stage 1: Written Examination – Tests theoretical knowledge of offensive security techniques.</li>
+    <li>Stage 2: Practical Black Box & Grey Box Testing – Simulates real-world environments.</li>
+    <li>Stage 3: White Box Assessment – In-depth security analysis with full access to systems.</li>
+  </ul>
+  <p>While these certifications are not yet globally recognized, they demonstrate commitment, technical expertise, and hands-on capabilities to any cybersecurity employer.</p>
+
+  <h2>Badge System</h2>
+  <p>We have introduced a unique badge system with 20 progressive achievement badges. Each badge represents a specific skill or achievement earned through practical exams. Earning all 20 badges guarantees a job offer in red teaming at BL4CKW4R3, as it proves technical competence and dedication to the field. This system helps learners track progress, build a strong portfolio, and stand out to employers.</p>
+
+  <h2>Contact Us</h2>
+  <p>For inquiries, collaboration, or training opportunities, you can reach us via:</p>
+  <ul>
+    <li>Phone: +20 108 053 9072</li>
+    <li>Email: whoami.root.41@gmail.com</li>
+  </ul>
+  <p>Follow us on social media for updates and insights:</p>
+  <ul>
+    <li>Instagram: blackware_404</li>
+    <li>Facebook: blackware_404</li>
+    <li>LinkedIn: blware_404</li>
+  </ul>
+</section>
+
+  <section id="courses">
+    <h1>Our Courses</h1>
+    <ul>
+      <li>Offensive Security L1 - Beginner</li>
+      <li>Offensive Security L2 - Intermediate</li>
+      <li>Offensive Security L3 - Advanced</li>
+    </ul>
+  </section>
+
+  <section id="certifications" class="certificates">
+    <h1>Our Certifications</h1>
+    <div class="cert-item">
+      <img src="https://i.postimg.cc/wBdXz2YW/jrrt.png" alt="Cert 1">
+      <div class="cert-text">
+        <h2>JRRT - JUNIOR RED TEAMER</h2>
+        <p>The Junior Red Teamer (JRRT) certification validates foundational knowledge and practical skills in offensive security and ethical hacking. It is designed for beginners who want to enter the world of penetration testing and red teaming, offering a clear starting point into the tools, techniques, and concepts used by security professionals.
+
+Through this certification, candidates will learn to identify vulnerabilities, perform basic security assessments, and understand key principles of ethical hacking across both network and web application environments.
+
+Key Areas Covered:
+
+Kali Linux & Security Tools: Familiarity with Kali Linux and essential tools like Nmap, Metasploit, and BeEF-XSS for scanning, exploitation, and client-side attacks.
+
+Web Application Attacks: Understanding common vulnerabilities such as SQL Injection (SQLi), Cross-Site Scripting (XSS), and other OWASP Top 10 threats.
+
+Networking Basics: Core networking concepts, protocols, and traffic analysis for security testing.
+
+The JRRT certification is available for 1400 EGP.
+To apply, contact us at:
+
+Email: whoami.root.41@gmail.com
+
+Phone: +20 108 053 9072</p>
+      </div>
+    </div>
+    <div class="cert-item">
+      <img src="https://i.postimg.cc/kX6Ktzn1/rtp.png" alt="Cert 2">
+      <div class="cert-text">
+        <h2>RTP - RED TEAM PROFFESINAL</h2>
+        <p>The Red Team Professional (RTP) certification is designed for individuals seeking to master advanced offensive security techniques and real-world red teaming operations. Building upon foundational skills, this certification validates a candidate’s ability to execute complex, stealthy attacks against modern enterprise environments while simulating real adversary tactics.
+
+Through this certification, participants gain the expertise to bypass security defenses, escalate privileges across diverse platforms, and compromise high-value systems, including those in hardened or isolated environments.
+
+Key Areas Covered:
+
+Evasion Techniques: Defeating firewalls, IDS/IPS, EDR, and antivirus systems to maintain stealth.
+
+Privilege Escalation: Advanced attacks on Windows, Linux, and Android systems to achieve persistence and control.
+
+Hardware & Wireless Exploits: Drone hijacking, Bluetooth-based attacks, and methods to breach air-gapped networks.
+
+Social Engineering at Scale: Mass phishing campaigns to compromise users and gain initial access.
+
+The RTP certification represents a higher-level credential for professionals aiming to lead red team engagements and advanced security assessments.</p>
+      </div>
+    </div>
+    <div class="cert-item">
+      <img src="https://i.postimg.cc/g0dZQ03Q/rte.png" alt="Cert 3">
+      <div class="cert-text">
+        <h2>RTE - RED TEAM EXPERT</h2>
+        <p>The Red Teaming Expert (RTE) certification represents the highest level of achievement in offensive security training at BL4CKW4R3. Designed for seasoned professionals, this certification validates the skills needed to conduct sophisticated, full-scope red team operations against highly secured and complex environments. Candidates pursuing the RTE credential demonstrate their ability to simulate advanced persistent threats (APTs), exploit cutting-edge technologies, and execute end-to-end attack chains with precision and stealth.
+
+Key Areas Covered:
+
+Automotive Exploitation: Hacking cars, Tesla vehicles, and connected transportation systems.
+
+Telecommunication Attacks: Exploiting base transceiver stations (BTS) and deploying fake BTS for interception and control.
+
+IoT & Smart Home Intrusions: Compromising smart house devices and automation systems.
+
+Malware Development: Creating and deploying information stealers and custom ransomware payloads.
+
+Enterprise Exploitation: Advanced Active Directory attacks for lateral movement and full domain compromise.
+
+The RTE certification demonstrates expert-level offensive capabilities, equipping professionals with the knowledge to challenge modern security infrastructures at the highest standard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="hiring">
+    <h1>We Are Hiring!</h1>
+    <p>Send your CV to: careers@blackware.com</p>
+  </section>
+
+  <section id="contact">
+    <h1>Contact Us</h1>
+    <p>Email: info@blackware.com</p>
+    <p>Phone: +123 456 7890</p>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => {
+        s.classList.remove('active');
+      });
+      const target = document.getElementById(id);
+      target.style.display = 'block';
+      setTimeout(() => target.classList.add('active'), 50);
+      setTimeout(() => {
+        document.querySelectorAll('section').forEach(s => {
+          if (s.id !== id) s.style.display = 'none';
+        });
+      }, 600);
+      closeMenu();
+    }
+
+    function toggleMenu() {
+      document.querySelector('.sidebar').classList.toggle('open');
+    }
+
+    function closeMenu() {
+      document.querySelector('.sidebar').classList.remove('open');
+    }
+
+    window.onload = () => { showSection('home'); };
+  </script>
+
+</body>
+</html>
